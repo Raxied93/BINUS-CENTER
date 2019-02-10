@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- CSS -->
+    <style>
+    .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       background-color: dimgrey;
+       color: white;
+       text-align: center;
+    }
+    body {margin:0;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="margin-top:0%; margin-bottom:3%">
+            <ul>
+              <li><a class="active" href="Home.aspx">Home</a></li>
+              <li><a href="Product.aspx">Product</a></li>
+              <li><a href="FAQ.aspx">FAQ</a></li>
+              <li><a href="AboutUs.aspx">About US</a></li>
+            </ul>
+        </div>
+    <div >
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+    </form>
+</body>
+</html>
