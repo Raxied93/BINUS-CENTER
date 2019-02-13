@@ -17,6 +17,10 @@
        background-color: dimgrey;
        color: white;
        text-align: center;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
+
     }
     body {margin:0;}
 
@@ -54,7 +58,7 @@ li a:hover:not(.active) {
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="margin-top:0%; margin-bottom:3%">
+        <div style="margin-top:0%; margin-bottom:3%; max-height:200px; min-height:100px; max-width:300px; min-width:100px" >
             <ul>
               <li><a class="active" href="Home.aspx">Home</a></li>
               <li><a href="Product.aspx">Product</a></li>
@@ -62,12 +66,12 @@ li a:hover:not(.active) {
               <li><a href="AboutUs.aspx">About US</a></li>
             </ul>
         </div>
-    <div >
+    <div style="max-height:100px; min-height:400px; max-width:300px; min-width:100px">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
-    <div class="footer">
+    <div style="max-height:100px; min-height:50px; max-width:1500px; min-width:50px" class="footer">
       <p>Footer</p>
     </div>
     </form>
