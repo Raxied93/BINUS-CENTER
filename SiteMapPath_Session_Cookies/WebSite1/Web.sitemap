@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <!--Root-->
+  <siteMapNode url="Home.aspx" title="Home Page"  description="">
+    <!--Parent-->
+    <siteMapNode url="Product.aspx" title="Product Page"  description="">
+      <!--Child-->
+      <siteMapNode url="Product/Book.aspx" title="Book Page"  description=""/>
+      <siteMapNode url="Product/CD.aspx" title="CD Page"  description=""/>
+    </siteMapNode>
+    <!--Parent-->
+    <siteMapNode url="FAQ.aspx" title="FAQ Page"  description="">
+      <!--Child-->
+      <siteMapNode url="FAQ/DeliveryRules.aspx" title="Delivery Rules Page"  description=""/>
+    </siteMapNode>
+    <!--Parent-->
+    <siteMapNode url="AboutUs.aspx" title="Abou Us Page"  description="">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
