@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Datetimepicker -->
+    <script src="/DateTimePicker/jquery-1.12.4.js"></script>
+    <script src="/DateTimePicker/jquery-ui.js"></script>
+    <link href="/DateTimePicker/jquery-ui.css" rel="stylesheet" />
+    <!-- Bootsrap -->
+    <script src="/Bootstrap4/bootstrap.min.js"></script>
+    <link href="/Bootstrap4/bootstrap.min_2.css" rel="stylesheet" />
+<%--    <script src="../Bootstrap4/jquery-3.2.1.slim.min.js"></script>--%>
+    <script src="/Bootstrap4/popper.min.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Master.aspx">Master Hak Akses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Master_InputStock.aspx">Master Stock</a>
+              </li>
+            </ul>
+
+                <asp:Button ID="Button1" Class="btn btn-danger" runat="server" Text="Logout" OnClick="Button1_Click" />
+
+          </div>
+        </nav>
+        <div class="container">
+                <asp:ContentPlaceHolder id="Body" runat="server">
+        
+                </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
