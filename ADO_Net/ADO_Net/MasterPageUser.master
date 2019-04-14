@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageUser.master.cs" Inherits="MasterPageUser" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Datetimepicker -->
+    <script src="/DateTimePicker/jquery-1.12.4.js"></script>
+    <script src="/DateTimePicker/jquery-ui.js"></script>
+    <link href="/DateTimePicker/jquery-ui.css" rel="stylesheet" />
+    <!-- Bootsrap -->
+    <script src="/Bootstrap4/bootstrap.min.js"></script>
+    <link href="/Bootstrap4/bootstrap.min_2.css" rel="stylesheet" />
+<%--    <script src="../Bootstrap4/jquery-3.2.1.slim.min.js"></script>--%>
+    <script src="/Bootstrap4/popper.min.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="Body" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

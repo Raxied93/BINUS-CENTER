@@ -35,9 +35,9 @@
                 <a class="nav-link" href="Master_InputStock.aspx">Master Stock</a>
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            
                 <asp:Button ID="Button1" Class="btn btn-danger" runat="server" Text="Logout" OnClick="Button1_Click" />
-            </form>
+            
           </div>
         </nav>
         <div class="container">
@@ -70,7 +70,7 @@
                             <td align="center" style="padding-top:40px"><center><%#Eval("Member_ID")%></center></td>
                             <td style="padding-top:40px"><center><%#Eval("Nama_Member")%></center></td>
                             <td style="padding-top:40px"><%#Eval("Status_Member")%></td>
-                            <td style="padding-top:40px"><%#Eval("Id_Akses")%></td>
+                            <td style="padding-top:40px"><%#Eval("id_akses").ToString() == "1" ? "Menu Master" : "Menu User" %></td>
                             <td style="padding-top:40px"><center><%#Eval("Nama_Akses")%></center></td>
                         </tr>
                 </ItemTemplate>
@@ -89,11 +89,14 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="BtnInsert" runat="server" Text="Insert" OnClick="BtnInsert_Click" /></td>
+                        <asp:Button ID="BtnInsert" runat="server" CssClass="btn btn-success" Text="Insert" OnClick="BtnInsert_Click" /></td>   
+                    <td>
+                        <asp:Button ID="BtnUpdate" runat="server" CssClass="btn btn-warning" Text="Update" OnClick="BtnUpdate_Click" />
+                    </td>
                 </tr>
             </table>
             <br />
-            <asp:Button ID="BtnLogout" runat="server" Text="Logout" OnClick="BtnLogout_Click" />
+           
         </div>
     </form>
 </body>

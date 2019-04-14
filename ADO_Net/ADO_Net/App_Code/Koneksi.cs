@@ -56,6 +56,16 @@ public class Koneksi
                     GlobalAr.Add(reader["username_login"].ToString()); //0
                     GlobalAr.Add(reader["password_login"].ToString()); //0
                 }
+                else if (sub == "2")
+                { //Ms_Member
+                    GlobalAr.Add(reader["id_login"].ToString()); //0
+                    GlobalAr.Add(reader["username_login"].ToString()); //0
+                    GlobalAr.Add(reader["password_login"].ToString()); //0
+                } else if (sub == "3") {// untuk user akses
+                    GlobalAr.Add(reader["id_akses"].ToString()); //0
+                } else if (sub == "4") {
+                    GlobalAr.Add(reader["nama_barang"].ToString()); //0
+                }
 
             }
         }

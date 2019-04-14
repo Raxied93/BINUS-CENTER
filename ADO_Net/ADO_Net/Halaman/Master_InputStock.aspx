@@ -104,8 +104,7 @@
                 </asp:DropDownList>
                 
                     <br />
-                    <asp:Button ID="BtnUpdate" runat="server" CssClass="btn btn-success" Text="Update" OnClick="BtnUpdate_Click" />
-                
+                    <asp:Button ID="BtnUpdate" runat="server" CssClass="btn btn-success" Text="Update" OnClick="BtnUpdate_Click" />              
             </div>
         </div>
         <div id="insert" style="display: none">

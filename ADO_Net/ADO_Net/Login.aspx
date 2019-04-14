@@ -42,10 +42,10 @@
         <img src="img/icon.png" width="50" height="50"/>
         </div>
         <div class="form-group" style="margin:10px">
-            <asp:TextBox ID="TxtUsername"  class="form-control" placeholder="Username" required="required" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TxtUsername" autocomplete="off" class="form-control" placeholder="Username" required="required" runat="server"></asp:TextBox>
         </div>
         <div class="form-group" style="margin:10px">
-            <asp:TextBox ID="TxtPasswd" class="form-control" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="TxtPasswd" autocomplete="off"  class="form-control" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
         </div>
         <div class="form-group" style="margin:10px">
              <asp:Button ID="BtnLogin" Class="btn btn-danger" runat="server" Text="Masuk" OnClick="BtnLogin_Click" />
