@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 //must add
 using System.Web.Configuration;
@@ -65,6 +67,8 @@ public class Koneksi
                     GlobalAr.Add(reader["id_akses"].ToString()); //0
                 } else if (sub == "4") {
                     GlobalAr.Add(reader["nama_barang"].ToString()); //0
+                } else if (sub == "5") {
+                    GlobalAr.Add(reader["member_id"].ToString()); //0
                 }
 
             }
@@ -257,5 +261,99 @@ public class Koneksi
         }
         
         return ds;
+    }
+    //fungsi email 
+    public string email_otomatis(string e, string pesan)
+    {
+        string hasil = "";
+        //string subject = "Testing Email Notification"; ;
+        //string body = pesan;
+
+        //****WORKING CODE**************************************************************
+        //SmtpClient client = new SmtpClient("smtp.gmail.com");
+        //client.Port = 587;
+        //client.DeliveryMethod = SmtpDeliveryMethod.Network;
+        //client.UseDefaultCredentials = false;
+        //try
+        //{
+        //    System.Net.NetworkCredential credentials =new System.Net.NetworkCredential("tandasanyu@gmail.com", "herlambang17");
+        //    client.EnableSsl = true;
+        //    client.Credentials = credentials;
+        //    hasil = "OK";
+        //}
+        //catch (Exception ex)
+        //{
+        //    hasil = ex.Message;
+        //}
+        ////Creates a new message
+        //try
+        //{
+        //    var mail = new MailMessage("tandasanyu@gmail.com", e);
+        //    mail.Subject = subject;
+        //    mail.IsBodyHtml = true;
+        //    mail.Body = body;
+        //    client.Send(mail);
+        //}
+        ////Failing to deliver the message or to authentication will throw an exception
+        //catch (Exception ex)
+        //{
+        //    hasil = "Terdapat error Ketika Mengirim Email : " + ex.Message;
+        //}
+        //******
+        //gather email from form textbox
+        //string remail = e;//email staff
+
+        //MailAddress from = new MailAddress("tandasanyu@gmail.com");
+        //MailAddress to = new MailAddress(remail);
+        //MailMessage message = new MailMessage(from, to);
+
+        //message.Subject = "Yo! I'm an email!";
+
+        //string note = "Hello ! ";
+        //note += "I am an email sent from an ASP.NET Web Page! ";
+        //note += "See you later! ";
+
+        //message.Body = pesan;
+        //message.BodyEncoding = System.Text.Encoding.UTF8;
+        //message.IsBodyHtml = true;
+
+        //SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+        //client.UseDefaultCredentials = false;
+        //client.EnableSsl = true;
+        //client.Credentials = new NetworkCredential("tandasanyu@gmail.com", "herlambang17");
+
+        //try
+        //{
+        //    client.Send(message);
+        //}
+        //catch
+        //{
+        //    //error message?
+        //}
+        //finally
+        //{
+
+        //}
+        //****
+        SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+        smtpClient.UseDefaultCredentials = false;
+        smtpClient.EnableSsl = true;
+        smtpClient.Credentials = new System.Net.NetworkCredential("tandasanyu@gmail.com", "herlambang17");
+        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+        MailMessage mailMessage = new MailMessage("Tandasanyu@gmail.com", e);
+        mailMessage.Subject = "Test Email Notification";
+        mailMessage.Body = pesan;
+        mailMessage.IsBodyHtml = true;
+        try
+        {
+            smtpClient.Send(mailMessage);
+            hasil = "OK";
+        }
+        catch (Exception ex)
+        {
+            hasil = ex.ToString();
+        }
+        return hasil;
     }
 }

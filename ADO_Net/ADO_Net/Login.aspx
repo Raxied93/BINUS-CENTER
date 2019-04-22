@@ -33,6 +33,7 @@
         font-weight: bold;
     }
 </style>
+        <script src='https://www.google.com/recaptcha/api.js'></script>  
 </head>
 <body>
 <div class="login-form">
@@ -46,6 +47,9 @@
         </div>
         <div class="form-group" style="margin:10px">
             <asp:TextBox ID="TxtPasswd" autocomplete="off"  class="form-control" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
+        </div>
+        <div class="form-group">
+                 <div class="g-recaptcha" data-sitekey="6LfYd5QUAAAAAAMCRbYOO11f_BFGJesn7DZR-WJB"></div>
         </div>
         <div class="form-group" style="margin:10px">
              <asp:Button ID="BtnLogin" Class="btn btn-danger" runat="server" Text="Masuk" OnClick="BtnLogin_Click" />
