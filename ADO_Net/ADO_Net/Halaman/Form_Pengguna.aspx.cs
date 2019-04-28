@@ -1,4 +1,11 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using iTextSharp.text;
+using iTextSharp.text.html;
+using System.IO;
+using System.Text.RegularExpressions;
+using iTextSharp.text.html.simpleparser;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -101,6 +108,7 @@ public partial class Form_Pengguna : System.Web.UI.Page
         ListViewCekKeranjang.DataBind();
         ListViewCekKeranjang.Visible = true;
         BtnBatalKeranjang.Visible = true;
+        BtnCetak.Visible = true;
         //hide
         BtnSimpanKeranjang.Visible = false;
         ListViewHakAkses.Visible = false;
@@ -111,5 +119,12 @@ public partial class Form_Pengguna : System.Web.UI.Page
     {
         Session.Clear();
         Response.Redirect("~/Login.aspx");
+    }
+
+
+
+    protected void BtnCetak_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Halaman/Report.aspx?memid=" + Convert.ToInt32(memid) + "");
     }
 }

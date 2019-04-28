@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Body" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Body" Runat="Server"> 
     <div class="container">
         <div class="form-group">
             <asp:SqlDataSource ID="SqlDataSourceHakAkses" runat="server"
@@ -45,6 +45,7 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-sm-3">
+                    Masukan Jumlah Barang Belanja Anda : 
                     <asp:TextBox ID="TxtJumlah" CssClass="form-control" Width="100px" runat="server"></asp:TextBox>
                 </div>
             </div>
@@ -63,7 +64,8 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
+        <div  class="form-group">
+            
             <asp:TextBox ID="TxtMemID" Visible="false" runat="server"></asp:TextBox> 
             <asp:ListView ID="ListViewCekKeranjang" visible="false" runat="server">
                 <LayoutTemplate>
@@ -96,6 +98,7 @@
         <div class="form-group">
                 <div class="col-sm-3">
                      <asp:Button ID="BtnBatalKeranjang" CssClass="btn btn-dark" Visible="false" runat="server" Text="Batal Belanja" OnClick="BtnBatalKeranjang_Click" />
+                    <asp:Button ID="BtnCetak" runat="server" CssClass="btn btn-dark" Visible="false" Text="Cetak Report" OnClick="BtnCetak_Click" />
                 </div>
         </div>
     </div>
